@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "C/C++: g++.exe build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/running_tracker.exe",  // Use the correct path to the executable
+            "args": [],  // If you need to pass any arguments to the program, you can put them here
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",  // Set the working directory to the workspace folder
+            "environment": [],
+            "externalConsole": false,  // You can set this to true if you prefer an external console
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",  // Path to gdb
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe build project"  // Ensure this matches the label in tasks.json
+        }
+    ]
+}
